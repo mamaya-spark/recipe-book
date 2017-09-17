@@ -10,7 +10,7 @@ export interface Recipe {
   cuisine: Cuisine;
   calories: number;
   servings: number;
-  time: string;
+  prep_time: string;
   ingredients: Ingredient[];
   directions: Direction[];
   notes: Note[];
