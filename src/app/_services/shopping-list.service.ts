@@ -2,6 +2,10 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs/Observable';
 
+import { ShoppingIngredient } from '../_store/models/ShoppingIngredient';
+import { AddOrRemoveRecipePostData } from '../_store/models/through/AddOrRemoveRecipePostData';
+import { ShoppingListResponseData } from '../_store/models/through/ShoppingListResponseData';
+
 @Injectable()
 export class ShoppingListService {
 
@@ -9,28 +13,28 @@ export class ShoppingListService {
     private _http: HttpClient
   ) { }
 
-  get(): Observable<any> {
+  get(): Observable<ShoppingListResponseData> {
     return this._http.get(`/api/v1/shopping-list`);
   }
 
-  addIngredient(postData: any): Observable<any> {
-    return this._http.post(`/api/v1/shopping-list/ingredient`, postData);
+  addIngredient(newIngredient: ShoppingIngredient): Observable<ShoppingListResponseData> {
+    return this._http.post(`/api/v1/shopping-list/ingredient`, newIngredient);
   }
 
-  updateIngredient(ingredientId: number, putData: any): Observable<any> {
-    return this._http.put(`/api/v1/shopping-list/ingredient/${ingredientId}`, putData);
+  updateIngredient(ingredientId: number, updateIngredient: ShoppingIngredient): Observable<ShoppingListResponseData> {
+    return this._http.put(`/api/v1/shopping-list/ingredient/${ingredientId}`, updateIngredient);
   }
 
-  removeIngredient(ingredientId: number): Observable<any> {
+  checkoffIngredient(ingredientId: number): Observable<ShoppingListResponseData> {
     return this._http.delete(`/api/v1/shopping-list/ingredient/${ingredientId}`);
   }
 
-  addRecipe(postData: any): Observable<any> {
-    return this._http.post(`/api/v1/shopping-list/ingredients`, postData);
+  addRecipe(addRecipe: AddOrRemoveRecipePostData): Observable<ShoppingListResponseData> {
+    return this._http.post(`/api/v1/shopping-list/ingredients`, addRecipe);
   }
 
-  removeRecipe(deleteData: any): Observable<any> {
-    return this._http.delete(`/api/v1/shopping-list/ingredients`, deleteData);
+  removeRecipe(removeRecipe: AddOrRemoveRecipePostData): Observable<ShoppingListResponseData> {
+    return this._http.delete(`/api/v1/shopping-list/ingredients`, removeRecipe);
   }
 
 }
