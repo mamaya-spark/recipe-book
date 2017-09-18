@@ -8,6 +8,7 @@ const pgSession    = require('connect-pg-simple')(session);
 const dao          = require('./db/dao');
 const appConfig    = require('./app.config.json');
 const dbUtil       = require('./util/db');
+const router       = require('./routes');
 
 //* Setup the express app
 const app = express();
@@ -39,7 +40,9 @@ app.use(session({
 const server = require('http').createServer(app);
 
 //* Setup the routes
-app.get('/', (req, res) => res.send('hello world'));
+app.use('/', router(dao));
+app.get('*', (req, res) =>
+  res.send('hello world'));
 
 //* Run the server
 server.listen(appConfig.SERVER.PORT, () =>
