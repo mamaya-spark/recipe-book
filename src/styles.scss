@@ -1,1 +1,65 @@
-/* You can add global styles to this file, and also import other style files */
+//* **** *//
+//* Font *//
+//* **** *//
+@import url('https://fonts.googleapis.com/css?family=Josefin+Sans:300,400,600,700');
+@import "vars";
+
+//* ********* *//
+//* Body Init *//
+//* ********* *//
+
+body {
+  background-color: $theme-bg;
+  color: $theme-text;
+  font-family: $font-stack;
+  font-weight: 300;
+  font-size: $font-size-start;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  cursor: default;
+  height: 100vh;
+
+  * {
+    box-sizing: border-box;
+  }
+}
+
+//* **************** *//
+//* HTML Tag Classes *//
+//* **************** *//
+
+* {
+  box-sizing: border-box;
+}
+
+input.inpt {
+  background-color: transparent;
+  border: 0;
+  outline: 0;
+}
+
+a.link {
+  text-decoration: none;
+  color: $theme-action-blue;
+
+  &:hover {
+    text-decoration: underline;
+    font-weight: 600;
+  }
+}
+
+button.btn {
+
+}
+
+h1.title {
+
+}
+
+h2.title {
+
+}
+
+//* ************** *//
+//* Helper Classes *//
+//* ************** *//

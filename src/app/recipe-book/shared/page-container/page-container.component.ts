@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'app-page-container',
+  selector: 'rbook-page-container',
   templateUrl: './page-container.component.html',
   styleUrls: ['./page-container.component.scss']
 })

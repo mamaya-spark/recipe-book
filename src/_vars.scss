@@ -1,0 +1,92 @@
+//* **** *//
+//* Font *//
+//* **** *//
+
+$font-stack:
+  'Josefin Sans',
+  -apple-system,
+  BlinkMacSystemFont,
+  "Segoe UI",
+  Helvetica,
+  Arial,
+  sans-serif,
+  "Apple Color Emoji",
+  "Segoe UI Emoji",
+  "Segoe UI Symbol";
+$font-size-start: 16px;
+
+//* ************ *//
+//* Theme Colors *//
+//* ************ *//
+
+$theme-bg: #FEFEFE;
+$theme-fg: #FFF;
+$theme-border: #DDDDDD;
+$theme-text: #707070;
+$theme-text-dark: #484848;
+
+$theme-action-disabled: #FAFAFA;
+$theme-action-blue: #2EC0C6;
+$theme-action-orange: #FC6D26;
+
+//* *********** *//
+//* Breakpoints *//
+//* *********** *//
+
+$break-sm: 576px;
+$break-md: 768px;
+$break-lg: 992px;
+$break-xl: 1400px;
+
+//* ******************* *//
+//* Component Variables *//
+//* ******************* *//
+
+//* ****** *//
+//* Mixins *//
+//* ****** *//
+
+@mixin media-breakpoint($breakpoint) {
+  @media screen and (min-width: $breakpoint) {
+    @content;
+  }
+}
+
+@mixin btn-fade($bg-color, $percent:0.2) {
+  background-color: fade-out($bg-color, $percent);
+
+  &:hover {
+    background-color: $bg-color;
+  }
+
+  &:active {
+    background-color: darken($bg-color, 5%);
+  }
+}
+
+@mixin scrollbar($bar-width, $track-color, $thumb-color) {
+  &::-webkit-scrollbar { width: $bar-width; }
+  &::-webkit-scrollbar-track { background-color: $track-color; }
+  &::-webkit-scrollbar-thumb { background-color: $thumb-color; }
+}
+
+@mixin placeholder($color) {
+  &::-webkit-input-placeholder { color: $color; }
+  &::-moz-placeholder { color: $color; }
+  &:-ms-input-placeholder { color: $color; }
+  &:-moz-placeholder { color: $color; }
+  &::placeholder { color: $color; }
+}
+
+@mixin box-shadow() {
+  box-shadow: 1px 1px 0px $theme-text;
+}
+
+@mixin no-select() {
+  -webkit-touch-callout: none;
+    -webkit-user-select: none;
+     -khtml-user-select: none;
+       -moz-user-select: none;
+        -ms-user-select: none;
+            user-select: none;
+}

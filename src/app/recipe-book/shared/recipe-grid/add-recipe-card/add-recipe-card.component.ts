@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'app-add-recipe-card',
+  selector: 'rbook-add-recipe-card',
   templateUrl: './add-recipe-card.component.html',
   styleUrls: ['./add-recipe-card.component.scss']
 })
