@@ -9,6 +9,10 @@ module.exports = (sequelize, DataTypes) => {
       type: DataTypes.TEXT,
       allowNull: false,
     },
+    img_url: {
+      type: DataTypes.TEXT,
+      allowNull: true,
+    },
     description: {
       type: DataTypes.TEXT,
       allowNull: true,
@@ -29,6 +33,10 @@ module.exports = (sequelize, DataTypes) => {
       allowNull: true,
     },
     prep_time: {
+      type: DataTypes.INTEGER,
+      allowNull: true,
+    },
+    cook_time: {
       type: DataTypes.INTEGER,
       allowNull: true,
     },

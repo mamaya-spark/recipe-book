@@ -1,0 +1,15 @@
+{
+  "SECRET_TOKEN": "ZFb6D^>.*^^w-4Cpnf&agq3.gn&H2AME2-~N(~ccTt*T<>s2eu&Ydezf>*abb~]]p(Z%KW=bC$CV'VaCvkK.aK>?x-jqTXr#C2T(c;FUg8,Mw&-3EfNeM%/4_H}-S#fE",
+  "SESSION_AGE_MS": 900000,
+  "DEFAULT_ADMIN": {
+    "USERNAME":   "admin",
+    "EMAIL":      "admin@sparkcognition.com",
+    "PASSWORD":   "$park2017",
+    "FIRST_NAME": "Spark",
+    "LAST_NAME":  "Admin"
+  },
+  "SERVER": {
+    "HOST": "127.0.0.1",
+    "PORT": 8000
+  }
+}
